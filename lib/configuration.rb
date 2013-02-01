@@ -77,7 +77,11 @@ class Configuration
     include Enumerable
 
     def each
-      methods(false).each{|v| yield v }
+      if RUBY_VERSION < '1.9.0'
+        methods(false).each{|v| yield v }
+      else
+        methods(false).map(&:to_s).each{|v| yield v }
+      end
     end
 
     def to_hash

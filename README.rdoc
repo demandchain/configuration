@@ -1,5 +1,5 @@
 = configuration.rb
-pure ruby scoped configuration files
+pure ruby scoped configuration files (Forked version)
 
 == Description
 configuration.rb provides a mechanism for configuring ruby programs with
@@ -219,3 +219,12 @@ consisting of one file and < 150 loc
 
 == Author
 ara.t.howard@gmail.com
+
+= Forked to allow for upgrade to Ruby 1.9.3
+in ruby 1.9.3 methods(false) returns an array of symbols
+in ruby 1.8.7 methods(false) returns an array of strings
+
+the Configuration class supports an each method based on methods(false)
+Galaxy passes this output to the Sequel Gem
+Sequel treats symbols very differently from strings, symbols tend to be columns names, strings are values
+this fork will continue to make the output of Configuration#each an array of strings for compatibility with Sequel
