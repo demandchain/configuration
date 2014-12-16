@@ -3,10 +3,11 @@
 
 Gem::Specification::new do |spec|
   spec.name = "configuration"
-  spec.version = "1.3.2"
+  spec.version = "1.3.4"
   spec.platform = Gem::Platform::RUBY
   spec.summary = "configuration"
-  spec.description = "description: configuration kicks the ass"
+  spec.description = "ruby configuration for your ruby programs"
+  spec.license = "same as ruby's"
 
   spec.files =
 ["LICENSE",
@@ -38,8 +39,7 @@ Gem::Specification::new do |spec|
 
   spec.test_files = nil
 
-### spec.add_dependency 'lib', '>= version'
-#### spec.add_dependency 'map'
+  
 
   spec.extensions.push(*[])
 
